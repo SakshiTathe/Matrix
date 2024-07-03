@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Matrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);   
+        System.out.print("Enter the number of rows:");
+        int rows=sc.nextInt();
+        System.out.print("Enter the number of columns:");
+        int columns=sc.nextInt();
+        int[][] arr = new int[rows][columns];  
+        for (int i = 0; i<rows; i++) {
+            for(int j=0;j<columns;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        int count=1;
+        for (int i = 0; i<rows; i++) {
+            for(int j=0;j<columns;j++){
+                System.out.print(arr[i][j] +" ");
+            } 
+            System.out.println("");
+        } 
+        System.out.print("enter the element to search:");
+        int search=sc.nextInt();
+        sc.close();
+        for (int i = 0; i<rows; i++) {
+            for(int j=0;j<columns;j++){
+                if(arr[i][j]==search){
+                System.out.print("This number is at index:"+i+""+j);
+                count=0;
+                break;
+                }
+            }
+            System.out.println("");
+        } 
+        if(count==1) System.out.print("This number is not present in matrix");
+    }
+}
