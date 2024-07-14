@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Matrix {
+    public int[][] creatematrix(Scanner sc,int rows,int columns) {
+        int[][] arr = new int[rows][columns];   
+        for (int i = 0; i < rows; i++) {
+            for(int j=0;j<columns;j++){
+                arr[i][j]=sc.nextInt();
+            } 
+        }
+        return arr;
+    }
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        Matrix example = new Matrix();
+        System.out.print("Enter the number of rows1:");
+        int r1=sc.nextInt();
+        System.out.print("Enter the number of columns1:");
+        int c1=sc.nextInt();
+        int[][] matrix = example.creatematrix(sc,r1,c1); 
+        printMatrix(matrix);
+        sc.close();  
+        for (int i = 0; i<r1; i++) {
+            for(int j=0;j<c1;j++){
+                if(i==0 ||j==0 ||i==r1-1|| j==c1-1){
+                    System.out.print(matrix[i][j]+" ");
+                }
+            }
+        } 
+    }
+}
